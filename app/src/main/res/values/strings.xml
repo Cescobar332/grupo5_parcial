@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">grupo5_parcial</string>
+    <string name="txt_partidos">Partidos de Argentina</string>
+    <string name="txt_detalle">Detalles del equipo rival</string>
+    <string name="guion">-</string>
+</resources>
