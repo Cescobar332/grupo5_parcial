@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.Objects;
+
 public class EquipoRivalActivity extends AppCompatActivity {
     private ListView Lv_data;
     private TextView Tv_data;
@@ -32,15 +34,24 @@ public class EquipoRivalActivity extends AppCompatActivity {
         ArrayAdapter<String>adapter4= new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, croacia);
         ArrayAdapter<String>adapter5 = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, francia);
 
-        Lv_data.setAdapter(adapter);
-        Lv_data.setAdapter(adapter2);
-        Lv_data.setAdapter(adapter3);
-        Lv_data.setAdapter(adapter4);
-        Lv_data.setAdapter(adapter5);
+
+
 
 
 
 
         Partido miPartidoAtrapado = (Partido) getIntent().getSerializableExtra("partido");
+        Tv_data.setText(miPartidoAtrapado.getNombreRival());
+        if(Objects.equals(miPartidoAtrapado.getNombreRival(), "Polonia")){
+            Lv_data.setAdapter(adapter);
+        } else if (Objects.equals(miPartidoAtrapado.getNombreRival(), "Australia")) {
+            Lv_data.setAdapter(adapter2);
+        } else if (Objects.equals(miPartidoAtrapado.getNombreRival(), "Países bajos")) {
+            Lv_data.setAdapter(adapter3);
+        }else if (Objects.equals(miPartidoAtrapado.getNombreRival(), "Croacia")) {
+            Lv_data.setAdapter(adapter4);
+        }else if (Objects.equals(miPartidoAtrapado.getNombreRival(), "Francia")) {
+            Lv_data.setAdapter(adapter5);
+        }
     }
 }
