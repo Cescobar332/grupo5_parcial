@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Partido> listaPrincipalPartidos;
     private RecyclerView rvListadoPartidos;
+    private TextView tvNumGanar, tvNumEmpatar, tvNumPerder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setTitle(getString(R.string.txt_partidos));
         rvListadoPartidos = findViewById(R.id.rv_list_partidos);
+        tvNumGanar = findViewById(R.id.tv_num_ganar);
+        tvNumEmpatar = findViewById(R.id.tv_num_empatar);
+        tvNumPerder = findViewById(R.id.tv_num_perder);
         cargarPartidos();
 
 
@@ -50,6 +55,82 @@ public class MainActivity extends AppCompatActivity {
         listaPrincipalPartidos.add(partido3);
         listaPrincipalPartidos.add(partido4);
         listaPrincipalPartidos.add(partido5);
+
+        Integer gl1 = 0;
+        Integer gl2 = 0;
+        Integer gl3= 0;
+        Integer gl4 = 0;
+        Integer gl5 = 0;
+        Integer gv1 = 0;
+        Integer gv2 = 0;
+        Integer gv3 = 0;
+        Integer gv4 = 0;
+        Integer gv5 = 0;
+        Integer w = 0;
+        Integer L = 0;
+        Integer T = 0;
+
+        gl1 = (partido1.getGolesEquipo());
+        gl2 = (partido2.getGolesEquipo());
+        gl3 = (partido3.getGolesEquipo());
+        gl4 = (partido4.getGolesEquipo());
+        gl5 = (partido5.getGolesEquipo());
+        gv1 = (partido1.getGolesRival());
+        gv2 = (partido2.getGolesRival());
+        gv3 = (partido3.getGolesRival());
+        gv4 = (partido4.getGolesRival());
+        gv5 = (partido5.getGolesRival());
+        if(gl1>gv1){
+            w=w+1;
+            tvNumGanar.setText(w.toString());
+        } else if (gl1<gv1) {
+            L=L+1;
+            tvNumPerder.setText(L.toString());
+        } else if (gl1==gv1){
+            T=T+1;
+            tvNumEmpatar.setText(T.toString());
+        }
+        if(gl2>gv2){
+            w=w+1;
+            tvNumGanar.setText(w.toString());
+        } else if (gl2<gv2) {
+            L=L+1;
+            tvNumPerder.setText(L.toString());
+        } else if (gl2==gv2){
+            T=T+1;
+            tvNumEmpatar.setText(T.toString());
+        }
+        if(gl3>gv3){
+            w=w+1;
+            tvNumGanar.setText(w.toString());
+        } else if (gl3<gv3) {
+            L=L+1;
+            tvNumPerder.setText(L.toString());
+        } else if (gl3==gv3){
+            T=T+1;
+            tvNumEmpatar.setText(T.toString());
+        }
+        if(gl4>gv4){
+            w=w+1;
+            tvNumGanar.setText(w.toString());
+        } else if (gl4<gv4) {
+            L=L+1;
+            tvNumPerder.setText(L.toString());
+        } else if (gl4==gv4){
+            T=T+1;
+            tvNumEmpatar.setText(T.toString());
+        }
+        if(gl5>gv5){
+            w=w+1;
+            tvNumGanar.setText(w.toString());
+        } else if (gl5<gv5) {
+            L=L+1;
+            tvNumPerder.setText(L.toString());
+        } else if (gl5==gv5){
+            T=T+1;
+            tvNumEmpatar.setText(T.toString());
+        }
+
 
     }
 }

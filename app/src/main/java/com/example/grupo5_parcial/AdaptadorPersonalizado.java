@@ -59,6 +59,7 @@ public class AdaptadorPersonalizado extends RecyclerView.Adapter<AdaptadorPerson
             tvGolesEquipo = itemView.findViewById(R.id.tv_goles_equipo);
             tvGolesRival = itemView.findViewById(R.id.tv_goles_rival);
             ivEscudo = itemView.findViewById(R.id.iv_escudo);
+
         }
         public void enlazar(Partido miPartido){
             tvEquipo.setText(miPartido.getNombreRival());

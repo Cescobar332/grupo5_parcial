@@ -3,4 +3,7 @@
     <string name="txt_partidos">Partidos de Argentina</string>
     <string name="txt_detalle">Detalles del equipo rival</string>
     <string name="guion">-</string>
+    <string name="ganados">Ganados:</string>
+    <string name="empatados">Empatados</string>
+    <string name="perdidos">Perdidos</string>
 </resources>
